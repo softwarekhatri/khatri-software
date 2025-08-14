@@ -33,7 +33,7 @@ export default function ScrollToTop() {
           animate={{ opacity: 1, scale: 1 }}
           exit={{ opacity: 0, scale: 0 }}
           onClick={scrollToTop}
-          className="fixed bottom-8 right-8 w-12 h-12 bg-white/10 backdrop-blur-md border border-white/20 rounded-full flex items-center justify-center transition-all duration-300 hover:bg-white/20 hover:scale-110 z-50"
+          className="fixed bottom-8 right-8 w-12 h-12 bg-secondary-black border border-white/20 rounded-full flex items-center justify-center transition-all duration-300 hover:scale-110 z-50"
           whileHover={{ scale: 1.1 }}
           whileTap={{ scale: 0.9 }}
         >

@@ -1,9 +1,10 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X } from "lucide-react";
 
 export default function Navigation() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [isTouchingContact, setIsTouchingContact] = useState(false);
 
   const navItems = [
     { href: "#hero", label: "Home" },
@@ -22,16 +23,51 @@ export default function Navigation() {
     setIsMobileMenuOpen(false);
   };
 
+  useEffect(() => {
+    const navbar = document.getElementById("navbar");
+    const contactSection = document.getElementById("contact");
+
+    if (!navbar || !contactSection) return;
+
+    const navbarHeight = navbar.offsetHeight;
+
+    const handleScroll = () => {
+      const contactTop = contactSection.getBoundingClientRect().top;
+      const contactBottom = contactSection.getBoundingClientRect().bottom;
+
+      if (contactTop <= navbarHeight && contactBottom > navbarHeight) {
+        setIsTouchingContact(true);
+      } else {
+        setIsTouchingContact(false);
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
   return (
-    <nav className="fixed top-0 w-full z-50 bg-primary-black/90 backdrop-blur-md border-b border-white/10">
+    <nav
+      className={`fixed top-0 w-full z-50 backdrop-blur-md border-b ${
+        !isTouchingContact
+          ? "bg-primary-black/90 border-white/10"
+          : "bg-white/10 text-primary-black"
+      }`}
+      id="navbar"
+    >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
           <div className="flex items-center">
-            <h1 className="text-xl font-bold text-pure-white cursor-pointer" onClick={() => handleNavClick('#hero')}>
+            <h1
+              className={`text-xl font-bold ${
+                !isTouchingContact ? "text-pure-white" : "text-primary-black"
+              } cursor-pointer`}
+              onClick={() => handleNavClick("#hero")}
+            >
               Khatri Software
             </h1>
           </div>
-          
+
           {/* Desktop Navigation */}
           <div className="hidden md:block">
             <div className="ml-10 flex items-baseline space-x-8">
@@ -39,14 +75,18 @@ export default function Navigation() {
                 <button
                   key={item.href}
                   onClick={() => handleNavClick(item.href)}
-                  className="hover:text-white/70 transition-colors duration-300 cursor-pointer"
+                  className={`${
+                    !isTouchingContact
+                      ? "hover:text-white/70"
+                      : "hover:text-black/50"
+                  } transition-colors duration-300 cursor-pointer`}
                 >
                   {item.label}
                 </button>
               ))}
             </div>
           </div>
-          
+
           {/* Mobile menu button */}
           <div className="md:hidden">
             <button
@@ -58,7 +98,7 @@ export default function Navigation() {
           </div>
         </div>
       </div>
-      
+
       {/* Mobile Navigation */}
       <AnimatePresence>
         {isMobileMenuOpen && (
