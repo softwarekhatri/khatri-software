@@ -117,10 +117,10 @@ export default function Footer() {
           >
             <h4 className="text-lg font-semibold mb-4">Services</h4>
             <ul className="space-y-2">
-              <li><a href="#" className="text-white/60 hover:text-white transition-colors duration-300">Custom Development</a></li>
-              <li><a href="#" className="text-white/60 hover:text-white transition-colors duration-300">Web Development</a></li>
-              <li><a href="#" className="text-white/60 hover:text-white transition-colors duration-300">Mobile Apps</a></li>
-              <li><a href="#" className="text-white/60 hover:text-white transition-colors duration-300">Cloud Solutions</a></li>
+              <li className="text-white/60 hover:text-white transition-colors duration-300">Custom Development</li>
+              <li className="text-white/60 hover:text-white transition-colors duration-300">Web Development</li>
+              <li className="text-white/60 hover:text-white transition-colors duration-300">Mobile Apps</li>
+              <li className="text-white/60 hover:text-white transition-colors duration-300">Cloud Solutions</li>
             </ul>
           </motion.div>
         </div>
