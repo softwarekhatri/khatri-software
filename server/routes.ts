@@ -8,7 +8,7 @@ export async function registerRoutes(app: Express): Promise<Server> {
   app.post("/api/quotes", async (req, res) => {
     try {
       const validatedData = insertQuoteSchema.parse(req.body);
-      const quote = await storage.createQuote(validatedData);
+      const quote = null;
 
       res.json({
         success: true,
@@ -35,7 +35,7 @@ export async function registerRoutes(app: Express): Promise<Server> {
   app.post("/api/contacts", async (req, res) => {
     try {
       const validatedData = insertContactSchema.parse(req.body);
-      const contact = await storage.createContact(validatedData);
+      const contact = null;
 
       res.json({
         success: true,
@@ -61,7 +61,7 @@ export async function registerRoutes(app: Express): Promise<Server> {
   // Get quotes endpoint (for admin purposes if needed)
   app.get("/api/quotes", async (req, res) => {
     try {
-      const quotes = await storage.getQuotes();
+      const quotes = null;
       res.json({ success: true, data: quotes });
     } catch (error) {
       res.status(500).json({
@@ -74,7 +74,7 @@ export async function registerRoutes(app: Express): Promise<Server> {
   // Get contacts endpoint (for admin purposes if needed)
   app.get("/api/contacts", async (req, res) => {
     try {
-      const contacts = await storage.getContacts();
+      const contacts = null;
       res.json({ success: true, data: contacts });
     } catch (error) {
       res.status(500).json({
