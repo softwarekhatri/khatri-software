@@ -46,22 +46,31 @@ export default function Navigation() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  useEffect(() => {
+    if (isMobileMenuOpen) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "";
+    }
+    return () => {
+      document.body.style.overflow = "";
+    };
+  }, [isMobileMenuOpen]);
+
   return (
     <nav
-      className={`fixed top-0 w-full z-50 backdrop-blur-md border-b ${
-        !isTouchingContact
-          ? "bg-primary-black/90 border-white/10"
-          : "bg-white/10 text-primary-black"
-      }`}
+      className={`fixed top-0 w-full z-50 backdrop-blur-md border-b ${!isTouchingContact
+        ? "bg-primary-black/90 border-white/10"
+        : "bg-white/10 text-primary-black"
+        }`}
       id="navbar"
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
           <div className="flex items-center">
             <h1
-              className={`text-xl font-bold ${
-                !isTouchingContact ? "text-pure-white" : "text-primary-black"
-              } cursor-pointer`}
+              className={`text-xl font-bold ${!isTouchingContact ? "text-pure-white" : "text-primary-black"
+                } cursor-pointer`}
               onClick={() => handleNavClick("#hero")}
             >
               Khatri Software
@@ -75,11 +84,10 @@ export default function Navigation() {
                 <button
                   key={item.href}
                   onClick={() => handleNavClick(item.href)}
-                  className={`${
-                    !isTouchingContact
-                      ? "hover:text-white/70"
-                      : "hover:text-black/50"
-                  } transition-colors duration-300 cursor-pointer`}
+                  className={`${!isTouchingContact
+                    ? "hover:text-white/70"
+                    : "hover:text-black/50"
+                    } transition-colors duration-300 cursor-pointer`}
                 >
                   {item.label}
                 </button>
@@ -107,14 +115,16 @@ export default function Navigation() {
             animate={{ x: 0 }}
             exit={{ x: "-100%" }}
             transition={{ duration: 0.3, ease: "easeInOut" }}
-            className="md:hidden fixed top-16 left-0 w-full h-screen bg-primary-black/95 backdrop-blur-md z-40"
+            className={`md:hidden fixed top-16 left-0 w-full h-screen z-40
+              ${isTouchingContact ? "bg-white text-primary-black" : "bg-primary-black text-white"}`}
+            style={{ backgroundColor: isTouchingContact ? "rgba(255,255,255,1)" : "rgba(10,10,10,1)" }}
           >
             <div className="px-4 pt-8 pb-6 space-y-6">
               {navItems.map((item) => (
                 <button
                   key={item.href}
                   onClick={() => handleNavClick(item.href)}
-                  className="block hover:text-white/70 transition-colors duration-300 text-lg"
+                  className="block hover:opacity-80 transition-colors duration-300 text-lg"
                 >
                   {item.label}
                 </button>
