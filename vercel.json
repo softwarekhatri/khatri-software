@@ -3,18 +3,14 @@
     "builds": [
         {
             "src": "server/index.ts",
-            "use": "@vercel/node",
-            "config": {
-                "includeFiles": [
-                    "dist/**",
-                    "client/**",
-                    "shared/**"
-                ]
-            }
+            "use": "@vercel/node"
         },
         {
-            "src": "client/src/main.tsx",
-            "use": "@vercel/static-build"
+            "src": "package.json",
+            "use": "@vercel/static-build",
+            "config": {
+                "distDir": "client/dist"
+            }
         }
     ],
     "routes": [
