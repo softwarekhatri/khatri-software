@@ -32,7 +32,7 @@ export default function ProjectModal({
       onClick={onClose}
     >
       <div
-        className="relative bg-white dark:bg-primary-black rounded-xl shadow-xl w-full max-w-4xl h-[80vw] max-h-[90vh] md:h-[500px] md:max-h-[500px] flex flex-col md:flex-row overflow-hidden"
+        className="relative bg-white dark:bg-primary-black rounded-xl shadow-xl w-full max-w-4xl h-[90vh] md:h-[500px] flex flex-col md:flex-row overflow-y-auto md:overflow-hidden"
         onClick={(e) => e.stopPropagation()}
       >
         {/* Close Icon */}
@@ -44,7 +44,7 @@ export default function ProjectModal({
           <X size={28} />
         </button>
         {/* Carousel */}
-        <div className="md:w-1/2 w-full flex flex-col items-center justify-center bg-gray-100 dark:bg-primary-black/80 relative h-full">
+        <div className="md:w-1/2 w-full flex flex-col items-center justify-center bg-gray-100 dark:bg-primary-black/80 relative h-48 xs:h-60 sm:h-72 md:h-full min-h-[180px] p-0 md:p-0">
           <Carousel className="w-full h-full">
             <CarouselContent className="h-full">
               {images.map((img, idx) => (
@@ -52,11 +52,11 @@ export default function ProjectModal({
                   key={idx}
                   className="h-full flex items-center justify-center"
                 >
-                  <div className="w-full h-full flex items-center justify-center">
+                  <div className="w-full h-full flex items-start md:items-center justify-center">
                     <img
                       src={img}
                       alt={title}
-                      className="w-full h-full object-contain rounded-t-xl md:rounded-l-xl md:rounded-tr-none"
+                      className="w-full h-full object-cover md:object-contain rounded-t-xl md:rounded-l-xl md:rounded-tr-none"
                     />
                   </div>
                 </CarouselItem>
@@ -67,16 +67,18 @@ export default function ProjectModal({
           </Carousel>
         </div>
         {/* Details */}
-        <div className="md:w-1/2 w-full p-6 flex flex-col justify-start">
-          <h2 className="text-2xl font-bold mb-2 text-primary-black dark:text-white">
+        <div className="md:w-1/2 w-full p-4 sm:p-6 flex flex-col justify-start overflow-y-auto max-h-80 md:max-h-full">
+          <h2 className="text-xl sm:text-2xl font-bold mb-2 text-primary-black dark:text-white break-words">
             {title}
           </h2>
-          <p className="mb-4 text-gray-700 dark:text-white/80">{description}</p>
+          <p className="mb-4 text-gray-700 dark:text-white/80 text-sm sm:text-base break-words">
+            {description}
+          </p>
           <div className="flex flex-wrap gap-2 mb-4">
             {technologies.map((tech) => (
               <span
                 key={tech}
-                className="text-sm px-3 py-2 bg-primary/10 text-primary rounded font-medium"
+                className="text-xs sm:text-sm px-3 py-2 bg-primary/10 text-primary rounded font-medium break-words"
               >
                 {tech}
               </span>
