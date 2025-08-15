@@ -11,6 +11,14 @@ const projects = [
     images: [
       "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&h=400",
       "https://images.unsplash.com/photo-1506744038136-46273834b3fb?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&h=400",
+      "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&h=400",
+      "https://images.unsplash.com/photo-1506744038136-46273834b3fb?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&h=400",
+      "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&h=400",
+      "https://images.unsplash.com/photo-1506744038136-46273834b3fb?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&h=400",
+      "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&h=400",
+      "https://images.unsplash.com/photo-1506744038136-46273834b3fb?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&h=400",
+      "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&h=400",
+      "https://images.unsplash.com/photo-1506744038136-46273834b3fb?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&h=400",
     ],
     technologies: ["React", "Node.js", "MongoDB"],
   },
@@ -76,10 +84,18 @@ export default function Projects() {
           {projects.map((project, index) => (
             <motion.div
               key={project.title}
-              className="glassmorphism rounded-2xl overflow-hidden hover:scale-105 transition-all duration-300 group"
+              className="glassmorphism rounded-2xl overflow-hidden group cursor-pointer"
               initial={{ opacity: 0, y: 50 }}
               animate={isVisible ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.6, delay: index * 0.1 }}
+              whileHover={{
+                scale: 1.06,
+                y: -8,
+                boxShadow: "0 8px 32px 0 rgba(0,0,0,0.25)",
+                zIndex: 2,
+              }}
+              whileTap={{ scale: 0.98 }}
+              style={{ touchAction: "manipulation" }}
             >
               <img
                 src={project.images[0]}
@@ -87,7 +103,9 @@ export default function Projects() {
                 className="w-full h-48 object-cover grayscale group-hover:grayscale-0 transition-all duration-500"
               />
               <div className="p-6">
-                <h3 className="text-xl font-semibold mb-2">{project.title}</h3>
+                <h3 className="text-xl font-semibold mb-2">
+                  {project.title}
+                </h3>
                 <p className="text-white/70 mb-4 line-clamp-2">
                   {project.description}
                 </p>
