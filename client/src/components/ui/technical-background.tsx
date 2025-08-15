@@ -19,7 +19,7 @@ const codeSnippets = [
   },
   {
     code: `// Transforming ideas into reality
-function createSoftware() {
+function updateSoftware() {
   while(client.satisfied !== true) {
     iterate();
   }
@@ -51,7 +51,7 @@ export default function TechnicalBackground() {
           <pre className="whitespace-pre-wrap">{snippet.code}</pre>
         </motion.div>
       ))}
-      
+
       {/* Geometric shapes */}
       <motion.div
         className="absolute top-1/4 right-10 w-32 h-32 border border-white/10"
@@ -59,7 +59,7 @@ export default function TechnicalBackground() {
         transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
         style={{ transform: "rotate(45deg)" }}
       />
-      
+
       <motion.div
         className="absolute bottom-1/4 left-20 w-20 h-20 border border-white/20 rounded-full"
         animate={{ scale: [1, 1.2, 1] }}
