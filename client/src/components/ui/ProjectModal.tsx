@@ -37,7 +37,7 @@ export default function ProjectModal({
       >
         {/* Close Icon */}
         <button
-          className="absolute top-4 right-4 text-black dark:text-white hover:opacity-70 z-10"
+          className="absolute top-4 right-4 text-black dark:text-white hover:opacity-40 z-10"
           onClick={onClose}
           aria-label="Close modal"
         >

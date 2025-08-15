@@ -85,6 +85,7 @@ export default function Projects() {
             <motion.div
               key={project.title}
               className="glassmorphism rounded-2xl overflow-hidden group cursor-pointer"
+              onClick={() => handleOpenModal(project)}
               initial={{ opacity: 0, y: 50 }}
               animate={isVisible ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.6, delay: index * 0.1 }}
