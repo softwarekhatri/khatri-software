@@ -44,7 +44,7 @@ export default function ProjectModal({
           <X size={28} />
         </button>
         {/* Carousel */}
-        <div className="md:w-1/2 w-full flex flex-col items-center justify-center bg-gray-100 dark:bg-primary-black/80 relative h-48 xs:h-60 sm:h-72 md:h-full min-h-[180px] p-0 md:p-0">
+        <div className="md:w-1/2 w-full flex flex-col items-center justify-center bg-gray-100 dark:bg-primary-black/80 relative min-h-[180px] h-56 xs:h-64 sm:h-72 md:h-full p-0 md:p-0">
           <Carousel className="w-full h-full">
             <CarouselContent className="h-full">
               {images.map((img, idx) => (
@@ -52,11 +52,11 @@ export default function ProjectModal({
                   key={idx}
                   className="h-full flex items-center justify-center"
                 >
-                  <div className="w-full h-full flex items-start md:items-center justify-center">
+                  <div className="w-full h-full flex items-center justify-center">
                     <img
                       src={img}
                       alt={title}
-                      className="w-full h-full object-cover md:object-contain rounded-t-xl md:rounded-l-xl md:rounded-tr-none"
+                      className="w-full h-full object-contain rounded-t-xl md:rounded-l-xl md:rounded-tr-none max-h-56 xs:max-h-64 sm:max-h-72 md:max-h-full"
                     />
                   </div>
                 </CarouselItem>
@@ -67,7 +67,7 @@ export default function ProjectModal({
           </Carousel>
         </div>
         {/* Details */}
-        <div className="md:w-1/2 w-full p-4 sm:p-6 flex flex-col justify-start overflow-y-auto max-h-80 md:max-h-full">
+        <div className="md:w-1/2 w-full p-4 sm:p-6 flex flex-col flex-1 min-h-0 justify-start overflow-y-auto md:max-h-full">
           <h2 className="text-xl sm:text-3xl font-bold mb-6 text-primary-black dark:text-white break-words">
             {title}
           </h2>
