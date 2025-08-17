@@ -5,22 +5,23 @@ import { Star } from "lucide-react";
 
 const testimonials = [
   {
-    name: "John Anderson",
-    position: "CEO, TechCorp",
-    image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=100&h=100",
-    text: "Khatri Software delivered exceptional results beyond our expectations. Their technical expertise and attention to detail transformed our business operations completely."
+    name: "Rahul Chandra",
+    position: "Co-Founder, Monkhood Living",
+    image: "/rahul.jpeg",
+    text: "Khatri Software delivered exceptional results beyond our expectations. Love their attention to detail and commitment to quality."
   },
   {
-    name: "Sarah Mitchell",
-    position: "CTO, InnovateHub",
-    image: "https://images.unsplash.com/photo-1494790108755-2616b332e234?ixlib=rb-4.0.3&auto=format&fit=crop&w=100&h=100",
-    text: "Working with Khatri Software was a game-changer. They understood our vision and delivered a robust, scalable solution that exceeded all our requirements."
+    name: "Durgesh",
+    position: "Founder, Ekwik Solutions",
+    website: "https://ekwiksolution.com/",
+    image: "/durgesh.enc",
+    text: "Get to have your services in future as well. You people are problem solver."
   },
   {
-    name: "Michael Chen",
+    name: "Vaibhav Dutt",
     position: "Founder, StartupLabs",
     image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-4.0.3&auto=format&fit=crop&w=100&h=100",
-    text: "The professionalism and technical prowess of Khatri Software impressed us from day one. They delivered our project on time and within budget."
+    text: "Loved working with Khatri Software. Amazing team, great communication especially with Ankit Khatri. Highly recommend!"
   }
 ];
 
@@ -53,13 +54,22 @@ export default function Testimonials() {
               transition={{ duration: 0.6, delay: index * 0.1 }}
             >
               <div className="flex items-center mb-6">
-                <img
-                  src={testimonial.image}
-                  alt={testimonial.name}
-                  className="w-12 h-12 rounded-full grayscale border-2 border-white/20 mr-4"
-                />
+                {testimonial.website ?
+                  (
+                    <a href={testimonial.website} target="_blank" rel="noopener noreferrer">
+                      <img
+                        src={testimonial.image}
+                        alt={testimonial.name}
+                        className="w-12 h-12 rounded-full border-2 border-white/20 mr-4"
+                      /></a>) :
+                  (<img
+                    src={testimonial.image}
+                    alt={testimonial.name}
+                    className="w-12 h-12 rounded-full border-2 border-white/20 mr-4"
+                  />)
+                }
                 <div>
-                  <h4 className="font-semibold">{testimonial.name}</h4>
+                  {testimonial.website ? (<a href={testimonial.website} target="_blank" rel="noopener noreferrer"><h4 className="font-semibold">{testimonial.name}</h4></a>) : (<h4 className="font-semibold">{testimonial.name}</h4>)}
                   <p className="text-white/60 text-sm">{testimonial.position}</p>
                 </div>
               </div>
@@ -73,6 +83,6 @@ export default function Testimonials() {
           ))}
         </div>
       </div>
-    </section>
+    </section >
   );
 }

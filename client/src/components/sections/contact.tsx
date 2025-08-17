@@ -6,6 +6,7 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { insertContactSchema } from "@shared/schema";
 import { useMutation } from "@tanstack/react-query";
 import { useToast } from "@/hooks/use-toast";
+import { FaWhatsapp } from "react-icons/fa";
 import { Mail, MapPin, Phone } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import {
@@ -275,7 +276,7 @@ export default function Contact() {
               <div className="space-y-4">
                 <div className="flex items-center">
                   <MapPin
-                    className="text-xl text-gray-600 mr-4 w-6"
+                    className="text-xl text-red-600 mr-4 w-6"
                     size={24}
                   />
                   <div>
@@ -295,7 +296,16 @@ export default function Contact() {
                   </div>
                 </div>
                 <div className="flex items-center">
-                  <Mail className="text-xl text-gray-600 mr-4 w-6" size={24} />
+                  <FaWhatsapp className="text-xl text-green-500 mr-4 w-6" size={24} />
+                  <a
+                    href="https://wa.me/917209703947?text=Hello, I would like to inquire about your services."
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <p className="font-semibold text-primary-black hover:text-green-600 transition-all duration-300 flex items-center">Chat on WhatsApp</p></a>
+                </div>
+                <div className="flex items-center">
+                  <Mail className="text-xl text-[#00BFFF] mr-4 w-6" size={24} />
                   <div>
                     <p className="font-semibold text-primary-black">Email</p>
                     <p className="text-gray-600">softwarekhatri@gmail.com</p>
@@ -318,7 +328,7 @@ export default function Contact() {
               <h4 className="text-xl font-semibold mb-4 text-primary-black">
                 Find Us
               </h4>
-              <div className="bg-gray-300 h-64 rounded-xl overflow-hidden">
+              <div className="bg-gray-300 h-60 rounded-xl overflow-hidden">
                 <iframe
                   title="Google Map"
                   src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d194.9549539549592!2d77.2849835!3d28.6193111!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390ce3f87b225607%3A0xcd2d8f6b6f8b635b!2sKhatri%20Software!5e1!3m2!1sen!2sin!4v1755170016003!5m2!1sen!2sin"
@@ -328,13 +338,13 @@ export default function Contact() {
                   allowFullScreen={true}
                   loading="lazy"
                   referrerPolicy="no-referrer-when-downgrade"
-                  className="w-full h-64 rounded-xl"
+                  className="w-full h-60 rounded-xl"
                 ></iframe>
               </div>
             </div>
           </motion.div>
-        </div>
-      </div>
-    </section>
+        </div >
+      </div >
+    </section >
   );
 }
