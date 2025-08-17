@@ -5,7 +5,6 @@ import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { insertContactSchema } from "@shared/schema";
 import { useMutation } from "@tanstack/react-query";
-import { apiRequest } from "@/lib/queryClient";
 import { useToast } from "@/hooks/use-toast";
 import { Mail, MapPin, Phone } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -39,21 +38,28 @@ export default function Contact() {
       name: "",
       email: "",
       phone: "",
-      subject: "",
       message: "",
       service: "",
     },
+    mode: "onSubmit",
   });
 
   const contactMutation = useMutation({
     mutationFn: async (data: any) => {
-      const response = await apiRequest("POST", "/api/contacts", data);
+      const response = await fetch("https://formspree.io/f/mqalopey", {
+        method: "POST",
+        headers: {
+          "Accept": "application/json",
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(data),
+      });
       return response.json();
     },
     onSuccess: (data) => {
       toast({
         title: "Success!",
-        description: data.message,
+        description: "Thank you! We'll contact you soon.",
       });
       form.reset();
     },
@@ -67,6 +73,18 @@ export default function Contact() {
   });
 
   const onSubmit = (data: any) => {
+    // If there are errors, show the first error toast and do not submit
+    const errors = form.formState.errors;
+    const firstErrorKey = Object.keys(errors)[0] as keyof typeof errors | undefined;
+    if (firstErrorKey && errors[firstErrorKey]) {
+      const firstError = errors[firstErrorKey];
+      toast({
+        title: "Validation Error",
+        description: (typeof firstError?.message === 'string' ? firstError.message : "Please fill all required fields correctly."),
+        variant: "destructive",
+      });
+      return;
+    }
     contactMutation.mutate(data);
   };
 
@@ -102,6 +120,7 @@ export default function Contact() {
             <div className="bg-gray-50 p-8 rounded-2xl shadow-lg">
               <Form {...form}>
                 <form
+                  method="POST"
                   onSubmit={form.handleSubmit(onSubmit)}
                   className="space-y-10"
                 >
@@ -175,7 +194,7 @@ export default function Contact() {
                         <FormLabel className="text-gray-500">
                           Service Required
                         </FormLabel>
-                        <Select onValueChange={field.onChange}>
+                        <Select value={field.value} onValueChange={field.onChange}>
                           <FormControl>
                             <SelectTrigger className="bg-white border-b-2 border-gray-200 focus:border-primary-black rounded-none border-x-0 border-t-0 px-2 text-primary-black focus:outline-none focus:ring-0 focus:ring-ring focus:ring-offset-0">
                               <SelectValue placeholder="Choose your service" />
