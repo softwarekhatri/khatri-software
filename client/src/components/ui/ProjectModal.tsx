@@ -68,17 +68,17 @@ export default function ProjectModal({
         </div>
         {/* Details */}
         <div className="md:w-1/2 w-full p-4 sm:p-6 flex flex-col justify-start overflow-y-auto max-h-80 md:max-h-full">
-          <h2 className="text-xl sm:text-2xl font-bold mb-2 text-primary-black dark:text-white break-words">
+          <h2 className="text-xl sm:text-3xl font-bold mb-6 text-primary-black dark:text-white break-words">
             {title}
           </h2>
-          <p className="mb-4 text-gray-700 dark:text-white/80 text-sm sm:text-base break-words">
+          <p className="mb-6 text-gray-500 text-justify dark:text-white/80 text-sm sm:text-base break-words">
             {description}
           </p>
           <div className="flex flex-wrap gap-2 mb-4">
             {technologies.map((tech) => (
               <span
                 key={tech}
-                className="text-xs sm:text-sm px-3 py-2 bg-primary/10 text-primary rounded font-medium break-words"
+                className="px-3 py-2 bg-black/10 text-xs sm:text-sm text-primary rounded font-medium break-words"
               >
                 {tech}
               </span>

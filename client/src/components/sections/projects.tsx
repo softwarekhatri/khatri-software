@@ -7,40 +7,52 @@ const projects = [
   {
     title: "E-Commerce Platform",
     description:
-      "Full-stack e-commerce solution with advanced analytics and inventory management.",
+      "We've built a Multi-Vendor E-Commerce Platform which is a scalable and secure marketplace solution built with Python, React.js, and MongoDB, designed to connect multiple sellers across categories like groceries, electronics, clothing, and more. With Razorpay and UPI payment integration, automated email notifications, and a powerful admin panel, it offers vendors seamless product management while ensuring customers enjoy a fast, reliable, and secure shopping experience.",
     images: [
-      "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&h=400",
-      "https://images.unsplash.com/photo-1506744038136-46273834b3fb?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&h=400",
-      "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&h=400",
-      "https://images.unsplash.com/photo-1506744038136-46273834b3fb?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&h=400",
-      "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&h=400",
-      "https://images.unsplash.com/photo-1506744038136-46273834b3fb?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&h=400",
-      "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&h=400",
-      "https://images.unsplash.com/photo-1506744038136-46273834b3fb?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&h=400",
-      "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&h=400",
-      "https://images.unsplash.com/photo-1506744038136-46273834b3fb?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&h=400",
+      "/ecomm/p1.png",
+      "/ecomm/p2.png",
+      "/ecomm/p3.png",
+      "/ecomm/p4.png",
+      "/ecomm/p5.png",
+      "/ecomm/p6.png",
+      "/ecomm/p7.png"
     ],
-    technologies: ["React", "Node.js", "MongoDB"],
+    technologies: ["React", "Node.js", "Python", "Flask", "MongoDB", "MySQL"],
   },
   {
-    title: "Corporate Web Platform",
+    title: "Smart HR Management Platform",
     description:
-      "Enterprise-level web platform with real-time data visualization and reporting.",
+      "This platform is a comprehensive HR Management Platform, a scalable and secure workforce solution developed using React, Java Spring Boot, and MySQL. Designed to streamline employee management, it integrates attendance tracking, timesheets, leave requests, payroll processing, tax compliance, and employee profiles into one unified system. With role-based access control, automated email notifications, and real-time reporting, it empowers HR teams to manage operations efficiently while providing employees with a seamless self-service experience. The platform ensures data security, accuracy, and scalability, making it an ideal choice for businesses of all sizes to manage their workforce with ease.",
     images: [
-      "https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&h=400",
-      "https://images.unsplash.com/photo-1465101046530-73398c7f28ca?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&h=400",
+      "/hrm/p1.png",
+      "/hrm/p2.png",
+      "/hrm/p3.png",
+      "/hrm/p4.png",
+      "/hrm/p5.png",
+      "/hrm/p6.png",
+      "/hrm/p7.png",
+      "/hrm/p8.png"
     ],
-    technologies: ["Vue.js", "Python", "PostgreSQL"],
+    technologies: ["React.js", "Node.js", "Java", "Spring Boot", "MySQL"],
   },
   {
-    title: "Mobile App Suite",
+    title: "Online Learning Platform",
     description:
-      "Cross-platform mobile application with seamless user experience and offline capabilities.",
+      "A comprehensive online coaching platform that makes learning simple, engaging, and accessible. From school classes (6–12) to competitive exams like IIT, MBBS, and GRE, it offers online admissions, recorded lectures, interactive quizzes, a dynamic gallery, and direct query support - all in one place. With a student-friendly design and smooth navigation, it ensures a complete learning experience for academic growth and exam success.",
     images: [
-      "https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&h=400",
-      "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&h=400",
+      "/occ/p1.png",
+      "/occ/p2.png",
+      "/occ/p3.png",
+      "/occ/p4.png",
+      "/occ/p5.png",
+      "/occ/p6.png",
+      "/occ/p7.png",
+      "/occ/p8.png",
+      "/occ/p9.png",
+      "/occ/p10.png",
+      "/occ/p11.png"
     ],
-    technologies: ["React Native", "Firebase", "GraphQL"],
+    technologies: ["React", "Node.js", "Java", "Spring Boot", "MongoDB"],
   },
 ];
 

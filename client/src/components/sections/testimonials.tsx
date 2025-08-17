@@ -18,9 +18,9 @@ const testimonials = [
     text: "Get to have your services in future as well. You people are problem solver."
   },
   {
-    name: "Vaibhav Dutt",
-    position: "Founder, StartupLabs",
-    image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-4.0.3&auto=format&fit=crop&w=100&h=100",
+    name: "Arvind Mehta",
+    position: "Founder, BuildTrip, Ex-Real Estate Head",
+    image: "/arvind.webp",
     text: "Loved working with Khatri Software. Amazing team, great communication especially with Ankit Khatri. Highly recommend!"
   }
 ];
