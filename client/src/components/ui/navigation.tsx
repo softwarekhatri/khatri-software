@@ -100,7 +100,10 @@ export default function Navigation() {
           <div className="md:hidden">
             <button
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-              className="text-white/70 hover:text-white focus:outline-none"
+              className={`${!isTouchingContact
+                ? "text-white/70"
+                : "text-black/70"
+                } " hover:text-white focus:outline-none"`}
             >
               {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
             </button>

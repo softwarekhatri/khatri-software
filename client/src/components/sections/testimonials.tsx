@@ -78,7 +78,7 @@ export default function Testimonials() {
                   <Star key={i} size={16} className="text-yellow-400 fill-current" />
                 ))}
               </div>
-              <p className="text-white/80 leading-relaxed">"{testimonial.text}"</p>
+              <p className="text-white/80 leading-relaxed">{testimonial.text}</p>
             </motion.div>
           ))}
         </div>

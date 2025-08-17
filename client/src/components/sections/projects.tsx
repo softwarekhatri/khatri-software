@@ -17,7 +17,7 @@ const projects = [
       "/ecomm/p6.png",
       "/ecomm/p7.png"
     ],
-    technologies: ["React", "Node.js", "Python", "Flask", "MongoDB", "MySQL"],
+    technologies: ["React", "Python", "Flask", "MongoDB"],
   },
   {
     title: "Smart HR Management Platform",
@@ -33,7 +33,7 @@ const projects = [
       "/hrm/p7.png",
       "/hrm/p8.png"
     ],
-    technologies: ["React.js", "Node.js", "Java", "Spring Boot", "MySQL"],
+    technologies: ["React.js", "Java", "Spring Boot", "MySQL"],
   },
   {
     title: "Online Learning Platform",
@@ -52,7 +52,7 @@ const projects = [
       "/occ/p10.png",
       "/occ/p11.png"
     ],
-    technologies: ["React", "Node.js", "Java", "Spring Boot", "MongoDB"],
+    technologies: ["React", "Node.js", "MongoDB"],
   },
 ];
 
